@@ -8,6 +8,7 @@
 
 python3.7.1，django2.2.5,实现注册，登陆，填加，删除，修改，查询等基础功能。新手必学技能。
 
+
 ## 项目安装
 
 ```
@@ -50,7 +51,7 @@ http://127.0.0.1:8000
 ### 登陆页面
 ![login](https://github.com/fanyaow/django_crud/blob/master/static/temp/1.png)
 ### 注册页面错误都会有相应的错误提示
-![login](https://github.com/fanyaow/django_crud/blob/master/static/temp/1.png)
+![login](https://github.com/fanyaow/django_crud/blob/master/static/temp/11.png)
 ### 注册页面
 ![register](https://github.com/fanyaow/django_crud/blob/master/static/temp/2.png)
 ### 登陆后首页
@@ -67,3 +68,4 @@ http://127.0.0.1:8000
 ### 删除，直接回到首页
 ![query](https://github.com/fanyaow/django_crud/blob/master/static/temp/8.png)
 
+## 欢迎Star ，你的赞赏，就是对我最大的鼓励。
