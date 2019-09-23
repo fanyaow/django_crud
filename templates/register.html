@@ -3,9 +3,9 @@
     <div class="layui-container">
         <blockquote class="layui-elem-quote">
             {% if request.session.is_login %}
-            <h1>CRUD——Django + LayUI,欢迎{{ request.session.user_name }}回来 ||  <a style="color:chartreuse " href="/logout/">注销</a>  </h1>
+            <h1>Django CRUD ,欢迎{{ request.session.user_name }}回来 ||  <a style="color:chartreuse " href="/logout/">退出登录</a>  </h1>
             {% else %}
-            <h1>CRUD——Django + LayUI  </h1>
+            <h1>Django CRUD  </h1>
             {% endif %}
         </blockquote>
 
