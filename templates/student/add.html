@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="layui-container">
+        <blockquote class="layui-elem-quote">
+            <h1>CRUD——Django + LayUI,欢迎{{ request.session.user_name }}回来 ||  <a style="color:chartreuse " href="/logout/">登出</a>  </h1>
+        </blockquote>
+
+        <div class="layui-row">
+
+            <div class="layui-col-md5">
+                <form action="/addStudent/" method="post" enctype="multipart/form-data"/>
+                    <hr class="layui-bg-green">
+                    {% csrf_token %}
+                    <input type="text" name="tName" id="tName" placeholder="学生名" class="layui-input"/>
+                    <hr class="layui-bg-green">
+
+                    <input type="text" name="tAge" id="tAge" placeholder="学生年龄" class="layui-input"/>
+                    <hr class="layui-bg-green">
+
+                    <input type="text" name="tPwd" id="tAge" placeholder="password" class="layui-input"/>
+                    <hr class="layui-bg-green">
+
+                    <input type="file" name="tImage" id="tImage"/>
+
+                    <hr class="layui-bg-green">
+                    <input type="submit" value="添加" class="layui-btn"/>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

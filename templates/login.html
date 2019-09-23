@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="layui-container">
+        <blockquote class="layui-elem-quote">
+          {% if request.session.is_login %}
+            <h1>CRUD——Django + LayUI,欢迎{{ request.session.user_name }}回来 ||  <a style="color:chartreuse " href="/logout/">注销</a>  </h1>
+            {% else %}
+            <h1>CRUD——Django + LayUI  </h1>
+            {% endif %}
+        </blockquote>
+        {# 查询学生模块 #}
+
+        <div class="layui-col-md5">
+            <form action="/login/" method="post" enctype="multipart/form-data"/>
+            <hr class="layui-bg-green">
+            {% csrf_token %}
+            <input type="text" name="username" id="tName" placeholder="用户名" class="layui-input"/>
+
+            <hr class="layui-bg-green">
+            <input type="password" name="password" id="tAge" placeholder="请输入密码" class="layui-input"/>
+
+            <hr class="layui-bg-green">
+
+            {{ login_form.captcha.label_tag }}
+            {{ login_form.captcha }}
+            <hr class="layui-bg-green">
+            {% if login_form.captcha.errors %}
+            <div class="layui-inline" style="color: red">{{ login_form.captcha.errors }}</div>
+             <hr class="layui-bg-green">
+             {% elif message %}
+            <div class="layui-inline" style="color: red">{{ message }}</div>
+            <hr class="layui-bg-green">
+             {% endif %}
+
+            <input type="submit" value="登陆" class="layui-btn"/>
+            <a href="/register" class="layui-btn layui-btn-warm">
+            <i class="layui-icon"></i>新用户注册
+            </a>
+        </div>
+    </div>
+    </form>
+
+
+
+{% endblock %}

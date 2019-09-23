@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="layui-container">
+        <blockquote class="layui-elem-quote">
+            {% if request.session.is_login %}
+            <h1>CRUD——Django + LayUI,欢迎{{ request.session.user_name }}回来 ||  <a style="color:chartreuse " href="/logout/">注销</a>  </h1>
+            {% else %}
+            <h1>CRUD——Django + LayUI  </h1>
+            {% endif %}
+        </blockquote>
+
+        <div class="layui-row">
+        {%for student in data%}
+            <div class="layui-col-md5">
+                <form action="/updateStudent/" method="post" enctype="multipart/form-data"/>
+                    {% csrf_token %}
+                    <input type="text" name="t_id" id="t_id" placeholder="id" class="layui-input" value="{{ student.id}}" />
+                    <hr class="layui-bg-green">
+
+                    <input type="text" name="tName" id="tName" placeholder="学生名" class="layui-input" value="{{ student.t_name}}"/>
+                    <hr class="layui-bg-green">
+
+                    <input type="text" name="tAge" id="tAge" placeholder="学生年龄" class="layui-input" value="{{ student.t_age }}"/>
+                    <hr class="layui-bg-green">
+
+                    <input type="file" name="tImage" id="tImage"/>
+                    <hr class="layui-bg-green">
+
+                    <img src="{{ student.t_image }}" height="50px">
+                    <hr class="layui-bg-green">
+
+                    <input type="submit" value="修改" class="layui-btn"/>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

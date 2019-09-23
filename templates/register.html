@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="layui-container">
+        <blockquote class="layui-elem-quote">
+            {% if request.session.is_login %}
+            <h1>CRUD——Django + LayUI,欢迎{{ request.session.user_name }}回来 ||  <a style="color:chartreuse " href="/logout/">注销</a>  </h1>
+            {% else %}
+            <h1>CRUD——Django + LayUI  </h1>
+            {% endif %}
+        </blockquote>
+
+        <div class="layui-row">
+
+            <div class="layui-col-md5">
+                <form action="/register/" method="post" enctype="multipart/form-data"/>
+                    <hr class="layui-bg-green">
+                    {% csrf_token %}
+                    <input type="text" name="username" id="tName" placeholder="用户名" class="layui-input"/>
+                    <hr class="layui-bg-green">
+                    <input type="password" name="password1" id="tAge" placeholder="输入密码" class="layui-input"/>
+                    <hr class="layui-bg-green">
+
+                    <input type="password" name="password2" id="tAge" placeholder="再次输入密码" class="layui-input"/>
+                    <hr class="layui-bg-green">
+
+                    <input type="text" name="email" id="tAge" placeholder="输入邮箱" class="layui-input"/>
+                    <hr class="layui-bg-green">
+                    {{ register_form.sex.label_tag }}
+                    {{ register_form.sex }}
+                    <hr class="layui-bg-green">
+                    {{ register_form.captcha.label_tag }}
+                    {{ register_form.captcha }}
+                    <hr class="layui-bg-green">
+                    {% if register_form.captcha.errors %}
+                    <div class="layui-inline" style="color: red">{{ register_form.captcha.errors }}</div>
+                    <hr class="layui-bg-green">
+                    {% elif message %}
+                    <div class="layui-inline" style="color: red">{{ message }}</div>
+                    <hr class="layui-bg-green">
+                    {% endif %}
+
+                    <input type="submit" value="注册" class="layui-btn"/>
+                    <a href="/login/" class="layui-btn layui-btn-warm">
+                    <i class="layui-icon"></i>直接登录
+                    </a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
