@@ -31,14 +31,39 @@ DATABASES = {
 }
 ```
 ### 在pycharm的terminal窗口执行
-python manage.py makemigrations
-python manage.py migrate
+```
+ python manage.py makemigrations
+ python manage.py migrate
+ ```
 ### 启动服务
+```
 python manage.py runserver 
-如果指定端口执行
-python manage.py runserver 127.0.0.1:8000
+```
+ 如果指定端口执行
+ ```
+ python manage.py runserver 127.0.0.1:8000
+ ```
 
 ### 浏览器访问：
 http://127.0.0.1:8000
 ## 项目截图
-![index](https://github.com/fanyaow/django_crud/tree/master/static/temp/1.png
+### 登陆页面
+![login](https://github.com/fanyaow/django_crud/blob/master/static/temp/1.png)
+### 注册页面错误都会有相应的错误提示
+![login](https://github.com/fanyaow/django_crud/blob/master/static/temp/1.png)
+### 注册页面
+![register](https://github.com/fanyaow/django_crud/blob/master/static/temp/2.png)
+### 登陆后首页
+![index](https://github.com/fanyaow/django_crud/blob/master/static/temp/3.png)
+### 增加学生页面，注意图片必须要上传，没做过多判断，否则提交会报错
+![add](https://github.com/fanyaow/django_crud/blob/master/static/temp/4.png)
+### 修改页面
+![update](https://github.com/fanyaow/django_crud/blob/master/static/temp/5.png)
+### 查询页面
+#### 查询前
+![query](https://github.com/fanyaow/django_crud/blob/master/static/temp/6.png)
+#### 查询后
+![query](https://github.com/fanyaow/django_crud/blob/master/static/temp/7.png)
+### 删除，直接回到首页
+![query](https://github.com/fanyaow/django_crud/blob/master/static/temp/8.png)
+
