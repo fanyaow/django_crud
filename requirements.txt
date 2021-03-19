@@ -1,4 +1,4 @@
-Django==2.2.5
+Django==2.2.18
 django-ranged-response==0.2.0
 django-simple-captcha==0.5.12
 mysqlclient==1.4.2
